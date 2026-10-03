@@ -1,0 +1,14 @@
+/* Site-wide colors: black background with white text.
+   Overrides Bootstrap's dark theme variables so cards and lists match. */
+[data-bs-theme="dark"] {
+  --bs-body-bg: #000;
+  --bs-body-color: #fff;
+}
+
+/* Accessibility: a thick, high-contrast outline shows keyboard users
+   which link or button is currently focused. */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #ffc107;
+  outline-offset: 2px;
+}
