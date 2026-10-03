@@ -16,6 +16,9 @@
   <!-- jQuery used to load the navbar -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
+  <!-- Accessibility: light/dark switch so users can change the contrast -->
+  <script src="theme.js"></script>
+
   <!-- Site colors: black background, white text -->
   <link href="styles.css" rel="stylesheet">
 </head>
@@ -32,6 +35,8 @@
       // Accessibility: mark the current page's link so screen readers announce it
       var page = location.pathname.split("/").pop() || "index.html";
       $('#site-nav a[href="' + page + '"]').addClass("active").attr("aria-current", "page");
+      // Accessibility: make the contrast button's text match the saved theme
+      setTheme(localStorage.getItem("theme") || "dark");
     });
   </script>
 

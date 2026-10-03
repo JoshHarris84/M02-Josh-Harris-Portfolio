@@ -14,6 +14,9 @@
   <!-- jQuery used to load the navbar -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
+  <!-- Accessibility: light/dark switch so users can change the contrast -->
+  <script src="theme.js"></script>
+
   <!-- Site colors: black background, white text -->
   <link href="styles.css" rel="stylesheet">
 </head>
@@ -30,6 +33,8 @@
       // Accessibility: mark the current page's link so screen readers announce it
       var page = location.pathname.split("/").pop() || "index.html";
       $('#site-nav a[href="' + page + '"]').addClass("active").attr("aria-current", "page");
+      // Accessibility: make the contrast button's text match the saved theme
+      setTheme(localStorage.getItem("theme") || "dark");
     });
   </script>
 
@@ -62,7 +67,8 @@
               <span class="badge text-bg-secondary">Bootstrap 5</span>
               <span class="badge text-bg-secondary">Git / GitHub</span>
             </p>
-            <a class="btn btn-outline-light" href="https://github.com/JoshHarris84/M02-Josh-Harris-Portfolio">
+            <!-- Accessibility: large button with text that says exactly what it does -->
+            <a class="btn btn-primary btn-lg" href="https://github.com/JoshHarris84/M02-Josh-Harris-Portfolio">
               View the code on GitHub
             </a>
           </div>
@@ -87,7 +93,8 @@
               <span class="badge text-bg-secondary">jQuery</span>
               <span class="badge text-bg-secondary">Git / GitHub</span>
             </p>
-            <a class="btn btn-outline-light" href="https://joshharris84.github.io/web-version-control-starter-project/">
+            <!-- Accessibility: large button with text that says exactly what it does -->
+            <a class="btn btn-primary btn-lg" href="https://joshharris84.github.io/web-version-control-starter-project/">
               View the live site
             </a>
           </div>

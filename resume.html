@@ -14,6 +14,9 @@
   <!-- jQuery used to load the navbar -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
+  <!-- Accessibility: light/dark switch so users can change the contrast -->
+  <script src="theme.js"></script>
+
   <!-- Site colors: black background, white text -->
   <link href="styles.css" rel="stylesheet">
 </head>
@@ -30,6 +33,8 @@
       // Accessibility: mark the current page's link so screen readers announce it
       var page = location.pathname.split("/").pop() || "index.html";
       $('#site-nav a[href="' + page + '"]').addClass("active").attr("aria-current", "page");
+      // Accessibility: make the contrast button's text match the saved theme
+      setTheme(localStorage.getItem("theme") || "dark");
     });
   </script>
 
@@ -37,7 +42,8 @@
   <main id="main-content" class="container my-4">
 
     <!-- Resume header: name and contact info -->
-    <header class="text-center border-bottom pb-3 mb-4 clearfix">
+    <!-- Accessibility: text is left-aligned, which is easier to read for users with dyslexia -->
+    <header class="border-bottom pb-3 mb-4 clearfix">
     <!-- Small circular profile photo floated to the top right -->
     <!-- Accessibility: alt text describes the photo for people who cannot see it -->
     <img src="images/profile.jpg"

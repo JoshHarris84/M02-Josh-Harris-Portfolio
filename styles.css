@@ -12,3 +12,24 @@ button:focus-visible {
   outline: 3px solid #ffc107;
   outline-offset: 2px;
 }
+
+/* The yellow outline is hard to see on a white background,
+   so light mode uses a black outline instead. */
+[data-bs-theme="light"] a:focus-visible,
+[data-bs-theme="light"] button:focus-visible {
+  outline-color: #000;
+}
+
+/* Accessibility: bigger click and tap targets in the navbar for users
+   with motor disabilities and touch screens. */
+#site-nav .nav-link,
+#theme-toggle {
+  padding: 0.75rem 1rem;
+}
+
+/* Accessibility: the current page's link is bold and underlined,
+   so it is not shown by color alone. */
+#site-nav .nav-link.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
