@@ -46,3 +46,16 @@ button:focus-visible {
     border-left: 1px solid var(--bs-border-color);
   }
 }
+
+/* Travel photos on the home page: keeps each caption wrapped
+   under its own photo instead of stretching wider than it. */
+.travel-photo {
+  max-width: 400px;
+}
+
+/* Crops each travel photo to the same 4:3 shape so a tall photo
+   lines up with a wide one. */
+.travel-photo img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
