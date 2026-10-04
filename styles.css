@@ -33,3 +33,16 @@ button:focus-visible {
   font-weight: bold;
   text-decoration: underline;
 }
+
+/* Divider line between each page link in the navbar.
+   On phones the links stack, so the line goes above each link instead. */
+#site-nav .nav-link + .nav-link {
+  border-top: 1px solid var(--bs-border-color);
+}
+
+@media (min-width: 576px) {
+  #site-nav .nav-link + .nav-link {
+    border-top: 0;
+    border-left: 1px solid var(--bs-border-color);
+  }
+}
